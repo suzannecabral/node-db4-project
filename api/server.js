@@ -1,27 +1,27 @@
 const express = require('express');
-const recipesRouter = require('../recipes/recipesRouter');
+// const recipesRouter = require('../recipes/recipesRouter');
 
 //NEW SERVER
 const server = express();
 
 
-//my default logger function
-const logger = (req,res,next) => {
-  const ts = new Date();
+// //my default logger function
+// const logger = (req,res,next) => {
+//   const ts = new Date();
 
-  console.log(`-------------------`);
-  console.log(`[${ts.toLocaleTimeString()}] Server Request: `);
-  console.log(`${req.method} ${req.url}`);
-  console.log(`-------------------`);
-  next();
-}
+//   console.log(`-------------------`);
+//   console.log(`[${ts.toLocaleTimeString()}] Server Request: `);
+//   console.log(`${req.method} ${req.url}`);
+//   console.log(`-------------------`);
+//   next();
+// }
 
 //USE MIDDLEWARE
 server.use(express.json);
-server.use(logger);
+// server.use(logger);
 
 //ROUTERS
-server.use('/api/recipes', recipesRouter);
+// server.use('/api/recipes', recipesRouter);
 
 
 //DEFAULT RESPONSE
