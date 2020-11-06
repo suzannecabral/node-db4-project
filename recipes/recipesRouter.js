@@ -3,11 +3,10 @@ const Recipes = require('./recipesModel');
 
 const router = express.Router();
 
-router.use(express.json);
-
+router.use(express.json());
 
 router.get('/',(req,res,next)=>{
-  Recipes.get()
+  Recipes.getRecipes()
     .then(data=>{
       res.status(200).json(data)
     })

@@ -1,8 +1,10 @@
 const db = require('../data/db-config');
 
 module.exports = {
-  getRecipes(){
-    return {message:"recipesModel is working"};
+  async getRecipes(){
+    // await console.log('Data model is connected');
+
+    return db('recipes');
   },
   getShoppingList(recipe_id){},
   getInstructions(recipe_id){}
