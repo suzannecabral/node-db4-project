@@ -46,13 +46,13 @@ exports.up = function(knex) {
       //order: integer
       tbl.integer('order')
         //req, non-negative
-        .unsigned
-        .notNullable
+        .unsigned()
+        .notNullable();
         
       //instructions: text 280
       tbl.text('instructions', 280)
         //req
-        .notNullable()
+        .notNullable();
   })
 
   //recipe_ingredients
@@ -87,7 +87,7 @@ exports.up = function(knex) {
     //ingredientQty: text, 128
     tbl.text('ingredientQty', 128)
       //req
-      .notNullable
+      .notNullable();
 
   });
 };
