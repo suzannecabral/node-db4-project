@@ -20,5 +20,20 @@ module.exports = {
       return Promise.resolve(null);
     }
   },
-  getInstructions(recipe_id){}
+  async getInstructions(recipe_id){
+    //make sure recipe exists
+    const foundRecipe = await db('recipes').where('id',recipe_id);
+
+    if(foundRecipe){
+      return db('steps as s')
+        .join('recipes as r', 's.recipe_id', 'r.id')
+        .select('s.instructions')
+        .where('s.recipe_id',recipe_id)
+        .orderBy('s.order')
+    }else{
+      return Promise.resolve(null);
+    }
+
+
+  }
 };
