@@ -3,7 +3,7 @@ const express = require('express');
 
 //NEW SERVER
 const server = express();
-
+// console.log('Server is connected');
 
 // //my default logger function
 // const logger = (req,res,next) => {
@@ -17,7 +17,7 @@ const server = express();
 // }
 
 //USE MIDDLEWARE
-server.use(express.json);
+server.use(express.json());
 // server.use(logger);
 
 //ROUTERS
