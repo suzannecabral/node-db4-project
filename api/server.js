@@ -1,5 +1,6 @@
 const express = require('express');
 const recipesRouter = require('../recipes/recipesRouter');
+const ingredientsRouter = require('../ingredients/ingredientsRouter');
 
 //NEW SERVER
 const server = express();
@@ -22,6 +23,7 @@ server.use(logger);
 
 //ROUTERS
 server.use('/api/recipes', recipesRouter);
+server.use('/api/ingredients', ingredientsRouter);
 
 
 //DEFAULT RESPONSE
